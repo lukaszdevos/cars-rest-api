@@ -3,7 +3,7 @@ from cars.serializers import CarSerializer, RateCarSerializer, CarPopularSeriali
 from cars.models import Car, RateCar
 from rest_framework import status
 from rest_framework.response import Response
-import requests, json
+import requests
 from cars.validation import car_validator, exists
 from django.db.models import Count
 
