@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import environ
 import os
+import django_heroku
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -92,7 +93,7 @@ DATABASES = {
         'PORT': env('PORTDB'),
     }
 }
-
+django_heroku.settings(locals())
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
