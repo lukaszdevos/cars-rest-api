@@ -82,15 +82,14 @@ WSGI_APPLICATION = 'netguru_task.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('NAMEDB'),
-        'USER': env('USERDB'),
-        'PASSWORD': env('PASSWORDDB'),
-        'HOST': env('HOSTDB'),
-        'PORT': env('PORTDB'),
+        'NAME': os.environ.get('NAMEDB'),
+        'USER': os.environ('USERDB'),
+        'PASSWORD': os.environ('PASSWORDDB'),
+        'HOST': os.environ('HOSTDB'),
+        'PORT': os.environ('PORTDB'),
     }
 }
 django_heroku.settings(locals())
