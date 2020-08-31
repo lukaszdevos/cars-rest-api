@@ -86,10 +86,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('NAMEDB'),
-        'USER': os.environ('USERDB'),
-        'PASSWORD': os.environ('PASSWORDDB'),
-        'HOST': os.environ('HOSTDB'),
-        'PORT': os.environ('PORTDB'),
+        'USER': os.environ.get('USERDB'),
+        'PASSWORD': os.environ.get('PASSWORDDB'),
+        'HOST': os.environ.get('HOSTDB'),
+        'PORT': os.environ.get('PORTDB'),
     }
 }
 django_heroku.settings(locals())
