@@ -23,7 +23,8 @@ class CarViewSet(viewsets.ModelViewSet):
         else:
             if exists(request_post_car_make, request_post_car_model): 
                 if car_validator(request_post_car_make, request_post_car_model):
-                    serializer = self.get_serializer(data=request.data)
+                    data = {'car_make': request_post_car_make.upper(), 'model_name': request_post_car_model.capitalize()}
+                    serializer = self.get_serializer(data=data)
                     serializer.is_valid(raise_exception=True)
                     serializer.save()
                     return Response(serializer.data, status=status.HTTP_201_CREATED)
