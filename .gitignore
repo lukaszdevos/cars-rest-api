@@ -7,3 +7,6 @@ venv/
 db.sqlite3
 cars/migrations
 .env
+static
+staticfiles
+
