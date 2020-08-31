@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath netguru_task netguru_task.wsgi --log-file -
+web: gunicorn netguru_task.wsgi
